@@ -1,0 +1,253 @@
+{
+  "sources": {
+    "lichess-structured": {
+      "headers": {
+        "Ply": {
+          "description": "Number of half moves",
+          "idx": 0
+        },
+        "Event": {
+          "description": "Tournament or game event name",
+          "idx": 1
+        },
+        "Result": {
+          "description": "Game result (1-0, 0-1, 1/2-1/2)",
+          "idx": 2
+        },
+        "BlackTitle": {
+          "description": "Black player's title (GM, IM, FM, etc.)",
+          "idx": 3
+        },
+        "WhiteTitle": {
+          "description": "White player's title (GM, IM, FM, etc.)",
+          "idx": 4
+        },
+        "Annotator": {
+          "description": "Person who annotated the game",
+          "idx": 5
+        },
+        "Black": {
+          "description": "Black player's username",
+          "idx": 6
+        },
+        "BlackClock": {
+          "description": "Space separated clock times for black (Lichess)",
+          "idx": 7
+        },
+        "BlackElo": {
+          "description": "Black player's Elo rating",
+          "idx": 8
+        },
+        "BlackFideId": {
+          "description": "Black player's FIDE ID",
+          "idx": 9
+        },
+        "BlackRatingDiff": {
+          "description": "Rating change for Black player",
+          "idx": 10
+        },
+        "BlackTeam": {
+          "description": "Black player's team affiliation",
+          "idx": 11
+        },
+        "Board": {
+          "description": "Board number in team events",
+          "idx": 12
+        },
+        "Date": {
+          "description": "Game date (YYYY.MM.DD format)",
+          "idx": 13
+        },
+        "ECO": {
+          "description": "Encyclopedia of Chess Openings code",
+          "idx": 14
+        },
+        "Moves": {
+          "description": "Space separated game moves in algebraic notation",
+          "idx": 15
+        },
+        "Opening": {
+          "description": "Opening name",
+          "idx": 16
+        },
+        "Round": {
+          "description": "Round number in tournament",
+          "idx": 17
+        },
+        "Site": {
+          "description": "URL to lichess game where game was played",
+          "idx": 18
+        },
+        "Termination": {
+          "description": "How the game ended (Normal, Time forfeit, etc.)",
+          "idx": 19
+        },
+        "TimeControl": {
+          "description": "Time control format (e.g., '180+0', '600+5')",
+          "idx": 20
+        },
+        "UTCDate": {
+          "description": "UTC date of the game",
+          "idx": 21
+        },
+        "UTCTime": {
+          "description": "UTC time when game started",
+          "idx": 22
+        },
+        "White": {
+          "description": "White player's username",
+          "idx": 23
+        },
+        "WhiteClock": {
+          "description": "Space separated clock times for white (Lichess)",
+          "idx": 24
+        },
+        "WhiteElo": {
+          "description": "White player's Elo rating",
+          "idx": 25
+        },
+        "WhiteFideId": {
+          "description": "White player's FIDE ID",
+          "idx": 26
+        },
+        "WhiteRatingDiff": {
+          "description": "Rating change for White player",
+          "idx": 27
+        },
+        "WhiteTeam": {
+          "description": "White player's team affiliation",
+          "idx": 28
+        }
+      },
+      "metadata": {
+        "source_type": "chess_games",
+        "format": "csv",
+        "separator": "\t",
+        "description": "Quality chess games (non-Bot, non-Bullet, > 3 ply) from lichess rated db dumps"
+      }
+    },
+    "chess-positions": {
+      "headers": {
+        "white_to_play": {
+          "description": "Boolean indicating if it's White's turn to move",
+          "idx": 0,
+          "data_type": "boolean"
+        },
+        "white_castle_kingside_rights": {
+          "description": "Boolean indicating if White can castle kingside",
+          "idx": 1,
+          "data_type": "boolean"
+        },
+        "white_castle_queenside_rights": {
+          "description": "Boolean indicating if White can castle queenside",
+          "idx": 2,
+          "data_type": "boolean"
+        },
+        "black_castle_kingside_rights": {
+          "description": "Boolean indicating if Black can castle kingside",
+          "idx": 3,
+          "data_type": "boolean"
+        },
+        "black_castle_queenside_rights": {
+          "description": "Boolean indicating if Black can castle queenside",
+          "idx": 4,
+          "data_type": "boolean"
+        },
+        "half_move_clock": {
+          "description": "Number of half-moves since last pawn move or capture (for 50-move rule)",
+          "idx": 5,
+          "data_type": "integer"
+        },
+        "ply": {
+          "description": "Total number of half-moves played in the game",
+          "idx": 6,
+          "data_type": "integer"
+        },
+        "fen": {
+          "description": "Full FEN (Forsyth-Edwards Notation) string representing the position",
+          "idx": 7,
+          "data_type": "string"
+        },
+        "white_queen_count": {
+          "description": "Number of White queens on the board",
+          "idx": 8,
+          "data_type": "integer"
+        },
+        "white_knight_count": {
+          "description": "Number of White knights on the board",
+          "idx": 9,
+          "data_type": "integer"
+        },
+        "white_pawn_count": {
+          "description": "Number of White pawns on the board",
+          "idx": 10,
+          "data_type": "integer"
+        },
+        "white_rook_count": {
+          "description": "Number of White rooks on the board",
+          "idx": 11,
+          "data_type": "integer"
+        },
+        "white_dark_bishop_count": {
+          "description": "Number of White bishops on dark squares",
+          "idx": 12,
+          "data_type": "integer"
+        },
+        "white_light_bishop_count": {
+          "description": "Number of White bishops on light squares",
+          "idx": 13,
+          "data_type": "integer"
+        },
+        "black_queen_count": {
+          "description": "Number of Black queens on the board",
+          "idx": 14,
+          "data_type": "integer"
+        },
+        "black_knight_count": {
+          "description": "Number of Black knights on the board",
+          "idx": 15,
+          "data_type": "integer"
+        },
+        "black_pawn_count": {
+          "description": "Number of Black pawns on the board",
+          "idx": 16,
+          "data_type": "integer"
+        },
+        "black_rook_count": {
+          "description": "Number of Black rooks on the board",
+          "idx": 17,
+          "data_type": "integer"
+        },
+        "black_dark_bishop_count": {
+          "description": "Number of Black bishops on dark squares",
+          "idx": 18,
+          "data_type": "integer"
+        },
+        "black_light_bishop_count": {
+          "description": "Number of Black bishops on light squares",
+          "idx": 19,
+          "data_type": "integer"
+        }
+      },
+      "metadata": {
+        "source_type": "chess_positions",
+        "format": "csv",
+        "generated_by": "pgn_to_positions_converter",
+        "description": "Position-by-position analysis of chess games with piece counts and game state",
+        "notes": [
+          "Each row represents a single position in a chess game",
+          "Bishops are categorized by square color (dark/light) for tactical analysis",
+          "FEN string provides complete position representation",
+          "Half-move clock tracks progress toward 50-move rule",
+          "Ply count represents total moves from game start"
+        ],
+        "typical_use_cases": [
+          "Chess position analysis",
+          "Endgame pattern recognition",
+          "Material balance studies",
+          "Machine learning training data"
+        ]
+      }
+    }
+  }
+}

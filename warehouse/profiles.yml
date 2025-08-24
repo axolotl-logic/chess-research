@@ -1,0 +1,13 @@
+axolotl_chess:
+    target: dev
+    outputs:
+        dev:
+            type: bigquery
+            method: service-account
+            keyfile: ../secrets/dbt-bigquery.json
+            project: axolotl-chess
+            dataset: chess
+            threads: 1
+            timeout_seconds: 300
+            location: US
+            priority: interactive
