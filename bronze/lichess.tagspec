@@ -1,0 +1,29 @@
+Ply
+Event - Bullet
+Result ! *
+BlackTitle ! BOT
+WhiteTitle ! BOT
+Annotator
+Black
+BlackClock
+BlackElo
+BlackFideId
+BlackRatingDiff
+BlackTeam
+Board
+Date
+ECO
+Moves
+Opening
+Round
+Site
+Termination
+TimeControl
+UTCDate
+UTCTime
+White
+WhiteClock
+WhiteElo
+WhiteFideId
+WhiteRatingDiff
+WhiteTeam
