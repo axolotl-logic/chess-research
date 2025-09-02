@@ -1,2 +1,4 @@
 volume
 secrets
+.venv
+.pyre
