@@ -79,16 +79,17 @@ def measure_game(row):
     board = chess.Board()
 
     moves = row["Moves"].split(" ")
-    # WORKAROUND: WhiteClock/BlackClock is reversed
-    # in the source data
     clocks = {
-        chess.WHITE: collections.deque([int(c) for c in row["BlackClock"].split(" ")]),
-        chess.BLACK: collections.deque([int(c) for c in row["WhiteClock"].split(" ")]),
+        chess.WHITE: collections.deque([int(c) for c in row["WhiteClock"].split(" ")]),
+        chess.BLACK: collections.deque([int(c) for c in row["BlackClock"].split(" ")]),
     }
     elos = {chess.WHITE: int(row["WhiteElo"]), chess.BLACK: int(row["BlackElo"])}
     base_time, increment = parse_time_control(row["TimeControl"])
 
-    assert len(clocks[chess.WHITE]) - len(clocks[chess.BLACK]) in [0, 1]
+    clock_lens_diff = len(clocks[chess.WHITE]) - len(clocks[chess.BLACK])
+    assert clock_lens_diff >= 0 and clock_lens_diff <= 1, (
+        "Unexpected number of clock entries"
+    )
 
     last_clock: dict[chess.Color, Optional[int]] = {
         chess.WHITE: None,
@@ -96,6 +97,7 @@ def measure_game(row):
     }
 
     last_fragility = None
+    last_clock_diff = None
     for idx, move in enumerate(moves):
         start_clock = last_clock[board.turn]
         end_clock = clocks[board.turn].popleft()
@@ -130,6 +132,7 @@ def measure_game(row):
             "move_clock_end": end_clock,
             "move_clock_diff": clock_diff,
             "move_from_fragility_diff": fragility_diff,
+            "move_from_clock_diff": last_clock_diff,
             "move": move,
             "game_utc_date": row["UTCDate"],
             "game_utc_time": row["UTCTime"],
@@ -137,6 +140,8 @@ def measure_game(row):
         }
 
         board.push_san(move)
+
+        last_clock_diff = clock_diff
 
 
 def measure_board(board: chess.Board):
