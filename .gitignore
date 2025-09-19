@@ -2,3 +2,4 @@ volume
 secrets
 .venv
 .pyre
+.ipynb_checkpoints
