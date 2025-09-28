@@ -1,0 +1,9 @@
+services:
+  axolotl-infra:
+    build: .
+    ports:
+      - "127.0.0.1:8090:8090"
+      - "127.0.0.1:8080:8080"
+      - "127.0.0.1:8070:8070"
+    volumes:
+      - ./logs/:/var/log/axolotl

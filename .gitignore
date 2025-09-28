@@ -3,3 +3,5 @@ secrets
 .venv
 .pyre
 .ipynb_checkpoints
+*.log
+__pycache__
